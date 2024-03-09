@@ -20,7 +20,7 @@ class PokemonBaseNode(APINode):
 
     def __init__(self):
         super(PokemonBaseNode, self).__init__()
-        self.color = (128, 128, 0, 255)
+        self.color = (255, 0, 0, 255)
         self.layout_direction = LayoutDirectionEnum.HORIZONTAL.value
         self.endpoint += "https://pokeapi.co/api/v2/"
         

@@ -1,6 +1,7 @@
-from NodeGraphQt import BaseNode, BaseNodeCircle
+from NodeGraphQt import BaseNode
 import sys
 sys.path.append("..")
+sys.path.append("../..")
 
 from widgets.TextLabelWidgetWrapper import TextLabelWidgetWrapper
 

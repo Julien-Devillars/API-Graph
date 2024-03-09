@@ -5,6 +5,7 @@ import signal
 import sys
 
 from nodes.PokemonAPI import ItemNode, PokemonBaseNode, PokemonNode
+from nodes.Utils import APIResponViewerNode, TextInputNode
 
 native_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -18,7 +19,8 @@ from NodeGraphQt import (
 )   
 
 # import example nodes from the "example_nodes" package
-from nodes import API, utils_nodes
+from nodes import API
+from nodes import API
 from nodes.PokemonAPI import PokemonNode, ItemNode
 
 
@@ -43,7 +45,8 @@ if __name__ == '__main__':
         PokemonNode.PokemonNode,
         PokemonNode.PokemonNodeId,
         ItemNode.ItemNode,
-        utils_nodes.APIResponseViewerNode
+        APIResponViewerNode.APIResponseViewerNode,
+        TextInputNode.TextInputNode
     ])
 
     # show the node graph widget.

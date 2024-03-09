@@ -48,8 +48,18 @@ class APINode(BaseNode):
     def run(self):
         request_type = self.get_property("mRequestType")
         
+        url = self.endpoint
+        
+        ports = self.connected_input_nodes()
+        for port_key in ports:
+            for connected_node in ports[port_key]:
+                if connected_node.type_ == "Utils.TextInputNode":
+                    endpoint_placeholder_name = port_key.model.name
+                    endpoint_placeholder_value = connected_node.getText()
+                    url = re.sub("{"+endpoint_placeholder_name+"}", endpoint_placeholder_value, url)
+        
         if(request_type == "GET"):
-            response = requests.get(url = self.endpoint)
+            response = requests.get(url = url)
             data = response.json()
         
         ports = self.connected_output_nodes()
