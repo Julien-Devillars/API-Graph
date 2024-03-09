@@ -25,9 +25,11 @@ class PokemonNodeId(PokemonBaseNode):
     __identifier__ = 'API.Pokemon'
 
     # initial default node name.
-    NODE_NAME = 'Pokemon'
+    NODE_NAME = 'PokemonID'
 
     def __init__(self):
-        super(PokemonNode, self).__init__()
+        super(PokemonNodeId, self).__init__()
         self.endpoint += "pokemon/{id}"
         self.NODE_NAME = self.endpoint
+        
+        self.look_for_endpoint_inputs()

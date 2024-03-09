@@ -3,7 +3,7 @@ import sys
 sys.path.append("..")
 import requests
 import json
-
+import re
 from widgets.RunButtonWidgetWrapper import RunButtonWidgetWrapper
 
 from NodeGraphQt.constants import (
@@ -65,3 +65,7 @@ class APINode(BaseNode):
         else:
             self.hide_widget("mPostBodyRequest", False)
   
+    def look_for_endpoint_inputs(self):
+        inputs = re.findall("\{(\w+?)\}", self.endpoint)
+        for input in inputs:
+            self.add_input(input)

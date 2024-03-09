@@ -41,6 +41,7 @@ if __name__ == '__main__':
     # registered example nodes.
     graph.register_nodes([
         PokemonNode.PokemonNode,
+        PokemonNode.PokemonNodeId,
         ItemNode.ItemNode,
         utils_nodes.APIResponseViewerNode
     ])
