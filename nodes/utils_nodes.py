@@ -1,10 +1,8 @@
 from NodeGraphQt import BaseNode, BaseNodeCircle
 import sys
 sys.path.append("..")
-import json
 
 from widgets.TextLabelWidgetWrapper import TextLabelWidgetWrapper
-
 
 class APIResponseViewerNode(BaseNode):
     """
@@ -24,15 +22,6 @@ class APIResponseViewerNode(BaseNode):
         self.add_input('Json',
                        multi_input = True, 
                        display_name= False)
-        #items = ['10', '20', '50', '100']
-        #self.add_combo_menu('mNbDisplay', 
-        #                    'Number', 
-        #                    items=items,
-        #                    tooltip='Number of item to display')
+        
         label = TextLabelWidgetWrapper(self.view)
-        self.add_custom_widget(label, tab="Custom")
-        #self.add_text_input('mResponse', 
-        #                    'Response', 
-        #                    tab='widgets')
-        #self.set_property('mResponse', 
-        #                  "test")
+        self.add_custom_widget(label)

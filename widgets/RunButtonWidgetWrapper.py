@@ -1,5 +1,5 @@
-from NodeGraphQt import BaseNode, BaseNodeCircle, NodeBaseWidget
-from Qt import QtCore, QtWidgets
+from NodeGraphQt import NodeBaseWidget
+from Qt import QtWidgets
 
 class RunButtonWidgetWrapper(NodeBaseWidget):
     """

@@ -12,6 +12,7 @@ class TextLabelWidgetWrapper(NodeBaseWidget):
         self.set_label('Label Widget')
         
         label = QtWidgets.QLabel()
+        label.setAlignment(QtCore.Qt.AlignCenter)
         self.set_custom_widget(label)
         
     def get_value(self):

@@ -4,6 +4,8 @@ import os
 import signal
 import sys
 
+from nodes.PokemonAPI import ItemNode, PokemonBaseNode, PokemonNode
+
 native_path = os.path.dirname(os.path.abspath(__file__))
 
 from Qt import QtCore, QtWidgets
@@ -16,7 +18,8 @@ from NodeGraphQt import (
 )   
 
 # import example nodes from the "example_nodes" package
-from nodes import api_nodes, utils_nodes
+from nodes import API, utils_nodes
+from nodes.PokemonAPI import PokemonNode, ItemNode
 
 
 if __name__ == '__main__':
@@ -37,10 +40,8 @@ if __name__ == '__main__':
     
     # registered example nodes.
     graph.register_nodes([
-        api_nodes.APINode,
-        api_nodes.APIPokemonNode,
-        api_nodes.APIPokemon_PokemonNode,
-        api_nodes.APIPokemon_ItemNode,
+        PokemonNode.PokemonNode,
+        ItemNode.ItemNode,
         utils_nodes.APIResponseViewerNode
     ])
 
